@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sarah Souza Leite Dias — Suporte Institucional & Cartorário</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Source+Sans+3:wght@400;500;600&display=swap');
+
+:root{
+  --paper:      #F3EEE2;
+  --paper-deep: #EAE2D0;
+  --ink:        #22293A;
+  --ink-mute:   #5B6274;
+  --ink-dim:    #8B8F7E;
+  --navy:       #17233A;
+  --burgundy:   #7A2331;
+  --gold:       #A9822C;
+  --gold-soft:  #C9B27A;
+  --line:       rgba(34,41,58,0.15);
+}
+
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Source Sans 3', sans-serif;
+  line-height:1.65;
+}
+h1,h2,h3{ font-family:'Fraunces', serif; font-weight:600; color:var(--ink); }
+a{ color:inherit; text-decoration:none; }
+.wrap{ max-width:1000px; margin:0 auto; padding:0 32px; }
+.italic-label{
+  font-family:'Fraunces', serif;
+  font-style:italic;
+  font-weight:500;
+  font-size:14px;
+  color:var(--burgundy);
+  letter-spacing:0.02em;
+}
+
+/* ---------- masthead ---------- */
+header.masthead{
+  background:var(--navy);
+  color:#EDE9DD;
+  border-bottom:3px solid var(--gold);
+}
+header.masthead .wrap{
+  display:flex; justify-content:space-between; align-items:center;
+  height:76px;
+}
+.brand{
+  font-family:'Fraunces', serif;
+  font-size:17px;
+  letter-spacing:0.03em;
+}
+.brand em{ font-style:italic; color:var(--gold-soft); }
+nav.links{ display:flex; gap:30px; }
+nav.links a{
+  font-size:12.5px;
+  text-transform:uppercase;
+  letter-spacing:0.12em;
+  color:#C7CBD6;
+  transition:color .2s;
+}
+nav.links a:hover{ color:var(--gold-soft); }
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;
+  padding:100px 0 84px;
+  overflow:hidden;
+}
+.hero .wrap{ position:relative; z-index:2; }
+.seal{
+  position:absolute;
+  right:-60px; top:40px;
+  width:380px; height:380px;
+  opacity:0.55;
+  z-index:1;
+  pointer-events:none;
+}
+.hero h1{
+  font-size:clamp(34px, 5vw, 54px);
+  line-height:1.15;
+  max-width:620px;
+  font-weight:500;
+}
+.hero h1 em{ font-style:italic; color:var(--burgundy); font-weight:500; }
+.gold-rule{
+  width:88px; height:2px;
+  background:var(--gold);
+  margin:28px 0;
+}
+.hero-sub{
+  max-width:520px;
+  color:var(--ink-mute);
+  font-size:16.5px;
+}
+.meta-tiles{
+  display:flex; flex-wrap:wrap; gap:14px;
+  margin-top:48px;
+}
+.tile{
+  background:var(--paper-deep);
+  border:1px solid var(--line);
+  padding:16px 22px;
+  min-width:150px;
+}
+.tile-label{
+  font-size:10.5px; text-transform:uppercase; letter-spacing:0.1em;
+  color:var(--ink-dim); margin-bottom:8px;
+}
+.tile-value{
+  font-family:'Fraunces', serif; font-size:19px; color:var(--ink);
+}
+
+/* ---------- sections ---------- */
+section{ padding:80px 0; border-top:1px solid var(--line); }
+.section-head{ margin-bottom:44px; }
+.section-head .italic-label{ display:block; margin-bottom:6px; }
+.section-head h2{ font-size:28px; }
+
+/* about */
+.about-grid{
+  display:grid;
+  grid-template-columns:1.3fr 1fr;
+  gap:60px;
+}
+.about-grid p{ margin-bottom:16px; color:var(--ink-mute); font-size:15.5px; }
+.about-grid p strong{ color:var(--ink); font-weight:600; }
+.info-list{ display:flex; flex-direction:column; gap:16px; }
+.info-row{
+  display:flex; justify-content:space-between;
+  border-bottom:1px solid var(--line);
+  padding-bottom:13px;
+  font-size:14px;
+}
+.info-row .k{
+  font-size:11px; text-transform:uppercase; letter-spacing:0.08em;
+  color:var(--ink-dim);
+}
+.info-row .v{ text-align:right; }
+
+/* areas de atuação */
+.areas-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(230px,1fr));
+  gap:1px;
+  background:var(--line);
+  border:1px solid var(--line);
+}
+.area-card{
+  background:var(--paper);
+  padding:30px 26px;
+  position:relative;
+}
+.area-card::before{
+  content:'';
+  position:absolute; top:0; left:0;
+  width:34px; height:3px;
+  background:var(--burgundy);
+}
+.area-card h3{ font-size:17px; margin:16px 0 10px; }
+.area-card p{ font-size:13.8px; color:var(--ink-mute); }
+
+/* timeline */
+.timeline{ position:relative; padding-left:32px; }
+.timeline::before{
+  content:'';
+  position:absolute; left:5px; top:6px; bottom:6px;
+  width:1px; background:var(--line);
+}
+.t-item{ position:relative; padding-bottom:42px; }
+.t-item:last-child{ padding-bottom:0; }
+.t-mark{
+  position:absolute; left:-32px; top:2px;
+  width:11px; height:11px;
+}
+.t-header{
+  display:flex; align-items:baseline; gap:12px; flex-wrap:wrap;
+  margin-bottom:4px;
+}
+.t-item h3{ font-size:18px; }
+.t-date{
+  font-size:11.5px; color:var(--burgundy);
+  text-transform:uppercase; letter-spacing:0.06em;
+}
+.badge-atual{
+  font-size:10px; text-transform:uppercase; letter-spacing:0.08em;
+  color:var(--navy); background:var(--gold-soft);
+  padding:2px 8px; border-radius:2px;
+}
+.t-role{ font-size:13.5px; color:var(--ink-dim); margin-bottom:10px; font-style:italic; font-family:'Fraunces', serif; }
+.t-item p{ color:var(--ink-mute); font-size:14.5px; max-width:640px; }
+
+/* formação */
+.edu-item{
+  display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:10px;
+  border-left:3px solid var(--gold);
+  padding:4px 0 4px 20px;
+  margin-bottom:24px;
+}
+.edu-item:last-child{ margin-bottom:0; }
+.edu-item h3{ font-size:17px; }
+.edu-item .inst{ font-size:13.5px; color:var(--ink-mute); margin-top:3px; font-style:italic; font-family:'Fraunces', serif; }
+
+/* skills bars */
+.bars-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+  gap:28px 48px;
+}
+.bar-item .bar-top{
+  display:flex; justify-content:space-between;
+  font-size:14px; margin-bottom:9px;
+}
+.bar-item .bar-top .lvl{ color:var(--ink-dim); font-size:12px; }
+.bar-track{
+  height:4px; background:var(--paper-deep); border:1px solid var(--line);
+}
+.bar-fill{ height:100%; background:var(--burgundy); }
+
+/* footer */
+footer{
+  background:var(--navy);
+  color:#EDE9DD;
+  padding:72px 0 40px;
+  border-top:3px solid var(--gold);
+}
+.contact-grid{
+  display:grid; grid-template-columns:1.2fr 1fr;
+  gap:48px; align-items:end;
+}
+footer h2{ color:#F3EEE2; font-size:30px; max-width:420px; }
+.contact-list{ display:flex; flex-direction:column; gap:16px; }
+.contact-item{
+  display:flex; flex-direction:column;
+  border-bottom:1px solid rgba(237,233,221,0.18);
+  padding-bottom:13px;
+}
+.contact-item .k{
+  font-size:10.5px; text-transform:uppercase; letter-spacing:0.1em;
+  color:#9AA1B4; margin-bottom:4px;
+}
+.contact-item .v{ font-size:15px; }
+.contact-item a:hover{ color:var(--gold-soft); }
+.foot-bottom{
+  margin-top:56px;
+  display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  font-size:11.5px; color:#8188A0;
+}
+
+/* reveal */
+.reveal{ opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease; }
+.reveal.in{ opacity:1; transform:none; }
+@media (prefers-reduced-motion: reduce){
+  .reveal{ opacity:1; transform:none; transition:none; }
+  html{ scroll-behavior:auto; }
+}
+
+@media (max-width:760px){
+  .wrap{ padding:0 20px; }
+  header.masthead .wrap{ height:64px; }
+  .brand{ font-size:15px; }
+  .about-grid, .contact-grid{ grid-template-columns:1fr; gap:36px; }
+  .hero{ padding:64px 0 52px; }
+  .hero-sub{ font-size:15.5px; }
+  section{ padding:60px 0; }
+  .section-head h2{ font-size:24px; }
+  nav.links{ display:none; }
+  .seal{ width:200px; height:200px; right:-50px; top:14px; opacity:0.35; }
+  .meta-tiles{ gap:10px; }
+  .tile{ min-width:calc(50% - 5px); flex:1 1 calc(50% - 5px); padding:14px 16px; }
+  .tile-value{ font-size:17px; }
+  .areas-grid, .bars-grid{ grid-template-columns:1fr; }
+  .timeline{ padding-left:26px; }
+  .t-mark{ left:-26px; }
+  footer{ padding:56px 0 32px; }
+  footer h2{ font-size:24px; }
+  .foot-bottom{ flex-direction:column; gap:8px; }
+}
+@media (max-width:480px){
+  .wrap{ padding:0 16px; }
+  .hero h1{ font-size:clamp(26px, 8vw, 32px); }
+  .italic-label{ font-size:12.5px; }
+  .seal{ width:150px; height:150px; right:-40px; top:6px; opacity:0.3; }
+  .tile{ min-width:100%; flex:1 1 100%; }
+  .info-row{ flex-direction:column; gap:3px; }
+  .info-row .v{ text-align:left; }
+  .t-header{ gap:8px; }
+  .edu-item{ flex-direction:column; gap:4px; }
+  .contact-item .v{ font-size:14px; word-break:break-word; }
+}
+</style>
+</head>
+<body>
+
+<header class="masthead">
+  <div class="wrap">
+    <div class="brand">SARAH SOUZA <em>LEITE DIAS</em></div>
+    <nav class="links">
+      <a href="#sobre">Sobre</a>
+      <a href="#atuacao">Áreas de Atuação</a>
+      <a href="#experiencia">Experiência</a>
+      <a href="#formacao">Formação</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <svg class="seal" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="100" cy="100" r="94" fill="none" stroke="#7A2331" stroke-width="1.2"/>
+    <circle cx="100" cy="100" r="80" fill="none" stroke="#A9822C" stroke-width="1"/>
+    <circle cx="100" cy="100" r="80" fill="none" stroke="#A9822C" stroke-width="1" stroke-dasharray="2 6"/>
+    <circle cx="100" cy="100" r="62" fill="none" stroke="#7A2331" stroke-width="0.8"/>
+    <text x="100" y="60" text-anchor="middle" font-family="Fraunces, serif" font-size="9" letter-spacing="3" fill="#7A2331">FÉ PÚBLICA</text>
+    <text x="100" y="146" text-anchor="middle" font-family="Fraunces, serif" font-size="9" letter-spacing="3" fill="#7A2331">BELO HORIZONTE</text>
+    <text x="100" y="112" text-anchor="middle" font-family="Fraunces, serif" font-style="italic" font-size="30" fill="#22293A">S</text>
+  </svg>
+
+  <div class="wrap">
+    <span class="italic-label">Belo Horizonte, MG</span>
+    <h1 style="margin-top:14px;">Precisão institucional e <em>cuidado bilíngue</em> em cada atendimento.</h1>
+    <div class="gold-rule"></div>
+    <p class="hero-sub">Sarah Souza Leite Dias — profissional de suporte institucional, cartorário e administrativo, com atuação simultânea em secretariado bilíngue e no âmbito extrajudicial, formada pela busca constante de organização, discrição e excelência no atendimento.</p>
+
+    <div class="meta-tiles">
+      <div class="tile">
+        <div class="tile-label">Atuação cartorária</div>
+        <div class="tile-value">3 anos</div>
+      </div>
+      <div class="tile">
+        <div class="tile-label">Secretariado</div>
+        <div class="tile-value">Bilíngue PT/EN</div>
+      </div>
+      <div class="tile">
+        <div class="tile-label">Formação</div>
+        <div class="tile-value">Direito — PUC Minas</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sobre">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="italic-label">01 — Perfil</span>
+      <h2>Sobre</h2>
+    </div>
+    <div class="about-grid">
+      <div class="reveal">
+        <p>Atuo simultaneamente em duas frentes que exigem o mesmo cuidado: <strong>secretariado bilíngue</strong>, com atendimento presencial e remoto em português e inglês, e <strong>suporte cartorário</strong>, no âmbito extrajudicial, com conferência e classificação de documentos, procurações e escrituras públicas.</p>
+        <p>Tenho facilidade em lidar com múltiplas demandas simultaneamente, boa capacidade de organização e comunicação escrita clara e objetiva — características que se somam à minha formação em <strong>Direito pela PUC Minas</strong>.</p>
+        <p>Busco contribuir com responsabilidade, eficiência e suporte às rotinas institucionais, em ambientes que exigem discrição, atenção aos detalhes e qualidade no atendimento.</p>
+      </div>
+      <div class="info-list reveal">
+        <div class="info-row"><span class="k">Localização</span><span class="v">Belo Horizonte, MG</span></div>
+        <div class="info-row"><span class="k">Telefone</span><span class="v">(31) 97114-5492</span></div>
+        <div class="info-row"><span class="k">E-mail</span><span class="v">sarahsleite29@gmail.com</span></div>
+        <div class="info-row"><span class="k">Idiomas</span><span class="v">Português (nativo) · Inglês (intermediário)</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="atuacao">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="italic-label">02 — Especialidades</span>
+      <h2>Áreas de Atuação</h2>
+    </div>
+    <div class="areas-grid reveal">
+      <div class="area-card">
+        <h3>Suporte institucional bilíngue</h3>
+        <p>Atendimento presencial, telefônico e virtual em português e inglês, com recepção de clientes e visitantes e foco em cordialidade.</p>
+      </div>
+      <div class="area-card">
+        <h3>Suporte cartorário e extrajudicial</h3>
+        <p>Apoio na abertura, verificação e andamento de protocolos relacionados a procurações e escrituras públicas.</p>
+      </div>
+      <div class="area-card">
+        <h3>Análise e conferência documental</h3>
+        <p>Classificação, organização e controle de documentos e processos internos, com foco em precisão e discrição.</p>
+      </div>
+      <div class="area-card">
+        <h3>Suporte administrativo institucional</h3>
+        <p>Acompanhamento de rotinas institucionais e acadêmicas, acolhimento e encaminhamento de demandas ao setor responsável.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="experiencia">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="italic-label">03 — Trajetória</span>
+      <h2>Experiência</h2>
+    </div>
+    <div class="timeline reveal">
+      <div class="t-item">
+        <svg class="t-mark" viewBox="0 0 11 11"><circle cx="5.5" cy="5.5" r="5" fill="#F3EEE2" stroke="#7A2331" stroke-width="1.6"/></svg>
+        <div class="t-header">
+          <h3>Anjos da Guarda</h3>
+          <span class="badge-atual">Atual</span>
+        </div>
+        <div class="t-date">Desde 07/2025</div>
+        <div class="t-role">Secretária Bilíngue</div>
+        <p>Atendimento ao público presencial, telefônico e virtual; suporte administrativo bilíngue em português e inglês; recepção de clientes e visitantes com foco em cordialidade e excelência no atendimento.</p>
+      </div>
+      <div class="t-item">
+        <svg class="t-mark" viewBox="0 0 11 11"><circle cx="5.5" cy="5.5" r="5" fill="#F3EEE2" stroke="var(--ink-dim)" stroke-width="1.6"/></svg>
+        <div class="t-header">
+          <h3>Sexto Ofício de Notas</h3>
+        </div>
+        <div class="t-date">05/2022 — 07/2025</div>
+        <div class="t-role">Auxiliar de Cartório</div>
+        <p>Suporte a atividades do âmbito extrajudicial; análise, conferência e classificação de documentos; apoio na abertura e andamento de protocolos de procurações e escrituras públicas; atendimento ao público com foco em agilidade e precisão.</p>
+      </div>
+      <div class="t-item">
+        <svg class="t-mark" viewBox="0 0 11 11"><circle cx="5.5" cy="5.5" r="5" fill="#F3EEE2" stroke="var(--ink-dim)" stroke-width="1.6"/></svg>
+        <div class="t-header">
+          <h3>Univeritas</h3>
+        </div>
+        <div class="t-role">Assistente Administrativo</div>
+        <p>Suporte administrativo às rotinas institucionais e acadêmicas; atendimento direto ao público, realizando acolhimento e encaminhamento de demandas; apoio à equipe administrativa e organizacional no acompanhamento de processos internos; organização de informações e acompanhamento de solicitações; atuação voltada à qualidade do atendimento e suporte aos estudantes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="formacao">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="italic-label">04 — Base acadêmica</span>
+      <h2>Formação</h2>
+    </div>
+    <div class="reveal">
+      <div class="edu-item">
+        <div>
+          <h3>Bacharelado em Direito</h3>
+          <div class="inst">Pontifícia Universidade Católica de Minas Gerais — PUC Minas</div>
+        </div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <h3>Ensino Médio</h3>
+          <div class="inst">Instituto de Educação de Minas Gerais</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="habilidades">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="italic-label">05 — Competências</span>
+      <h2>Habilidades</h2>
+    </div>
+    <div class="bars-grid reveal">
+      <div class="bar-item">
+        <div class="bar-top"><span>Atendimento ao público e suporte institucional</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:92%"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-top"><span>Organização e conferência documental</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:90%"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-top"><span>Comunicação verbal e escrita</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:88%"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-top"><span>Facilidade com demandas simultâneas</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:85%"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-top"><span>Pacote Office (Word, Excel, PowerPoint)</span><span class="lvl">Intermediário</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:65%"></div></div>
+      </div>
+      <div class="bar-item">
+        <div class="bar-top"><span>Inglês</span><span class="lvl">Intermediário</span></div>
+        <div class="bar-track"><div class="bar-fill" style="width:65%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer id="contato">
+  <div class="wrap">
+    <div class="contact-grid">
+      <h2 class="reveal">Vamos conversar sobre como posso apoiar sua equipe ou gabinete.</h2>
+      <div class="contact-list reveal">
+        <div class="contact-item">
+          <span class="k">E-mail</span>
+          <a class="v" href="mailto:sarahsleite29@gmail.com">sarahsleite29@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <span class="k">Telefone</span>
+          <a class="v" href="tel:+5531971145492">(31) 97114-5492</a>
+        </div>
+        <div class="contact-item">
+          <span class="k">Localização</span>
+          <span class="v">Belo Horizonte, MG</span>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Sarah Souza Leite Dias</span>
+      <span>Suporte Institucional, Cartorário & Administrativo</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const els = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  }, { threshold:0.15 });
+  els.forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
